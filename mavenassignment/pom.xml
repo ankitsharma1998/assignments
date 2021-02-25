@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>mavenassignment</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>module1</module>
+        <module>module2</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
+    </properties>
+    <build>
+        <finalName>firstprogram</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <archive>
+                        <manifest>
+                            <mainClass>newtech.firstprogram</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.5</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jvnet.localizer</groupId>
+            <artifactId>localizer</artifactId>
+            <version>1.8</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+            <!-- This scope indicates that the dependency is not required for normal use of the application,
+            and is only available for the test compilation and execution phases. This scope is not transitive.-->
+        </dependency>
+
+        <dependency>
+            <groupId>HTTPClient</groupId>
+            <artifactId>HTTPClient</artifactId>
+            <version>0.3-3</version>
+            <scope>compile</scope>
+            <!-- This is the default scope, used if none is specified. Compile dependencies are available in all
+            classpaths of a project. Furthermore, those dependencies are propagated to dependent project-->
+        </dependency>
+
+        <dependency>
+            <groupId>asm</groupId>
+            <artifactId>asm-tree</artifactId>
+            <version>3.2</version>
+            <scope>provided</scope>
+            <!-- This is much like compile, but indicates you expect the JDK or a container to provide the
+            dependency at runtime. This scope is only available on the compilation and test classpath,
+            and is not transitive.-->
+        </dependency>
+
+        <dependency>
+            <groupId>antlr</groupId>
+            <artifactId>antlr</artifactId>
+            <version>2.7.7</version>
+            <scope>runtime</scope>
+            <!-- This scope indicates that the dependency is not required for compilation,but is for execution.
+            It is in the runtime and test classpaths, but not the compile classpath.-->
+        </dependency>
+
+    </dependencies>
+    <repositories>
+        <repository>
+            <id>maven-repo</id>
+            <url>https://repo1.maven.org/maven2/</url>
+        </repository>
+        <repository>
+            <id>java.net</id>
+            <url>https://maven.java.net/content/repositories/public/</url>
+        </repository>
+    </repositories>
+</project>
+
+
